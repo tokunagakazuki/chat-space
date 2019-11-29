@@ -1,0 +1,34 @@
+.chat-main
+  .chat-main__group-info
+    .info-main
+      .info-main__title
+        やほ
+      .info-main__member
+        Member:masa
+    .info-edit
+      =link_to "#" do
+        Edit
+  .chat-main__message-list
+    .message
+      .message__upper
+        .message__upper--talker
+          toc
+        .message__upper__date
+          toc
+      .message__text
+        やってくれたなぁ
+    .message
+      .message__upper
+        .message__upper--talker
+          toc
+        .message__upper__date
+          toc
+      .message__text
+        やってくれたなぁ
+  .chat-main__message-form
+    .input-box
+      %input{class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "file"}
+      %input{class: "submit-btn", type: "submit", value: "Send"}
