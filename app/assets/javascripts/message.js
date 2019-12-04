@@ -2,23 +2,12 @@ $(function(){
   function buildHTML(message){
     // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
-      var html = `
-      <div class="message">
-      <div class="message__upper">
-      <div class="message__upper--talker">
-      ${message.user_name}
-      </div>
-      <div class="message__upper__date">
-      ${message.created_at}
-      </div>
-      </div>
-      <div class="message__text">
-      <img class="lower-message__image" src="${message.image}">
-      </div>
-      </div>
-      `//メッセージに画像が含まれる場合のHTMLを作る
+      image = `<img class="lower-message__image" src="${message.image}"></img>`
+      
     } else {
-      var html = `
+      image = ''
+    }
+    var html = `
       <div class="message">
       <div class="message__upper">
       <div class="message__upper--talker">
@@ -32,11 +21,10 @@ $(function(){
       <p class="lower-message__content">
       ${message.content}
       </p>
-
-    </div>
-    </div>
-      `//メッセージに画像が含まれない場合のHTMLを作る
-    }
+      ${image}
+      </div>
+      </div>
+      `
     return html;
   }
 
