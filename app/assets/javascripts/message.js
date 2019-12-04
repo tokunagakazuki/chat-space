@@ -55,13 +55,11 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      // console.log(message)
       var html = buildHTML(message);
       $('.chat-main').append(html)
       $('.chat-main').animate({ scrollTop: $('.chat-main')[0].scrollHeight});
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
-      // debugger
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
